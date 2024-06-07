@@ -3,13 +3,15 @@ import Chat from "../../components/chat/Chat"
 import List from "../../components/list/List"
 import apiRequest from "../../lib/apiRequest"
 import "./ProfilePage.scss"
-import { useContext } from "react"
+import { useContext} from "react"
 import { AuthContext } from "../../context/AuthContext"
 
 function ProfilePage() {
   
   const {updateUser, currentUser} = useContext(AuthContext);
+
   const navigate = useNavigate();
+
   const handleLogout = async()=>{
     try{
         await apiRequest.post("/auth/logout");
@@ -19,7 +21,7 @@ function ProfilePage() {
         console.log(err);
     }
   }
-  return (
+  return ( 
     <div className="profilePage">
         <div className="details">
             <div className="wrapper">

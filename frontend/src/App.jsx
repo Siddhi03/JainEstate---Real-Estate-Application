@@ -1,7 +1,7 @@
 import {createBrowserRouter, RouterProvider} from "react-router-dom"
 import HomePage from './pages/homePage/HomePage'
 import ListPage from './pages/listPage/ListPage'
-import Layout from "./pages/layout/Layout"
+import { Layout, RequiredAuth } from "./pages/layout/Layout"
 import SinglePage from "./pages/singlePage/SinglePage";
 import ProfilePage from "./pages/profilePage/ProfilePage";
 import Register from "./pages/register/Register";
@@ -26,10 +26,6 @@ function App() {
           element: <SinglePage />
         },
         {
-          path:"/profile",
-          element: <ProfilePage />
-        },
-        {
           path:"/register",
           element:<Register />
         },
@@ -41,6 +37,16 @@ function App() {
 
       ]
     },
+    {
+      path:"/",
+      element: <RequiredAuth />,
+      children: [
+        {
+          path: "profile",
+          element: <ProfilePage />,
+        }
+      ]
+    }
   ]);
 
   return (
