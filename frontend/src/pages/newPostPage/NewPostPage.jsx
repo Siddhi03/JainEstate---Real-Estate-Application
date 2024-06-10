@@ -43,7 +43,6 @@ function NewPostPage(){
                     restaurant: parseInt(inputs.restaurant),
                 }
             });
-            console.log(res.data);
             navigate("/"+res.data.id)
         }catch(err){
             console.log(err);
