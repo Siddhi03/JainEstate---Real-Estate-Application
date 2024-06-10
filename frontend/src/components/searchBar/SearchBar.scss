@@ -69,15 +69,21 @@
 
             }
         }
-        button{
-            border: none;
-            cursor: pointer;
-            background-color: #fece51;
+        a{
             flex: 1;
-
-            @include sm{
-                padding: 10px;
-                
+            background-color: #fece51;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            button{
+                border: none;
+                cursor: pointer; 
+                background-color: #fece51;              
+    
+                @include sm{
+                    padding: 10px;
+                    
+                }
             }
         }
         img{
